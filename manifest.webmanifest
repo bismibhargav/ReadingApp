@@ -1,0 +1,9 @@
+{
+  "name":"ReadSmart 20",
+  "short_name":"ReadSmart",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f4f7fb",
+  "theme_color":"#111827",
+  "description":"A 20-minute Year 6 reading fluency and spelling coach."
+}

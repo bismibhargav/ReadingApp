@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <title>ReadSmart 20</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div><strong>ReadSmart 20</strong><span class="tag">Year 6</span></div>
+  <button id="parentBtn" class="ghost">Parent</button>
+</header>
+
+<main id="app">
+  <section id="home" class="screen active">
+    <div class="hero">
+      <div class="mascot">📚⚽</div>
+      <h1>Today's 20-minute mission</h1>
+      <p id="welcome">Read. Think. Spell. Level up.</p>
+      <button id="startBtn" class="primary big">Start mission</button>
+      <div class="mini-stats">
+        <div><b id="streak">0</b><span>day streak</span></div>
+        <div><b id="bestWpm">—</b><span>best WPM</span></div>
+        <div><b id="spellingScore">—</b><span>spelling</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="warmup" class="screen">
+    <div class="progress"><span style="width:10%"></span></div>
+    <h2>⚡ Quick warm-up</h2>
+    <p>Tap a word to hear it. Then say it out loud.</p>
+    <div id="warmWords" class="word-grid"></div>
+    <button id="warmNext" class="primary">I'm ready →</button>
+  </section>
+
+  <section id="reading" class="screen">
+    <div class="progress"><span style="width:35%"></span></div>
+    <div class="story-head"><span id="topicBadge">SPORTS</span><span id="timer">00:00</span></div>
+    <h2 id="storyTitle"></h2>
+    <div class="story-card">
+      <p id="storyText"></p>
+    </div>
+    <div class="read-controls">
+      <button id="listenBtn" class="secondary">🔊 Read it to me</button>
+      <button id="recordBtn" class="secondary">🎙️ Read aloud</button>
+    </div>
+    <p id="recordStatus" class="status"></p>
+    <button id="readingDone" class="primary">I've finished reading →</button>
+  </section>
+
+  <section id="detective" class="screen">
+    <div class="progress"><span style="width:60%"></span></div>
+    <h2>🕵️ Reading Detective</h2>
+    <p id="questionCounter"></p>
+    <div class="question-card">
+      <h3 id="question"></h3>
+      <div id="answers"></div>
+      <p id="feedback"></p>
+    </div>
+    <button id="nextQuestion" class="primary" disabled>Next →</button>
+  </section>
+
+  <section id="spelling" class="screen">
+    <div class="progress"><span style="width:80%"></span></div>
+    <h2>🧪 Spelling Lab</h2>
+    <p>Spell the word you hear.</p>
+    <div class="spell-card">
+      <button id="spellHear" class="listen-word">🔊 Hear word</button>
+      <input id="spellInput" autocapitalize="none" autocomplete="off" spellcheck="false" placeholder="Type the spelling">
+      <button id="spellCheck" class="primary">Check spelling</button>
+      <p id="spellFeedback"></p>
+    </div>
+  </section>
+
+  <section id="finish" class="screen">
+    <div class="hero">
+      <div class="mascot">🏆</div>
+      <h1>Mission complete!</h1>
+      <p id="finishMessage"></p>
+      <div class="result-grid">
+        <div><b id="resultWpm">—</b><span>words/min</span></div>
+        <div><b id="resultAccuracy">—</b><span>reading accuracy</span></div>
+        <div><b id="resultSpelling">—</b><span>spelling</span></div>
+      </div>
+      <button id="homeBtn" class="primary big">Done</button>
+    </div>
+  </section>
+
+  <section id="parent" class="screen">
+    <div class="parent-head"><button id="parentBack" class="ghost">← Back</button><h2>Parent dashboard</h2></div>
+    <div class="dashboard">
+      <div class="dash-card"><b id="dashSessions">0</b><span>missions completed</span></div>
+      <div class="dash-card"><b id="dashWpm">—</b><span>latest WPM</span></div>
+      <div class="dash-card"><b id="dashAccuracy">—</b><span>latest accuracy</span></div>
+    </div>
+    <h3>Recent progress</h3>
+    <div id="history"></div>
+    <button id="resetBtn" class="danger">Reset progress</button>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
